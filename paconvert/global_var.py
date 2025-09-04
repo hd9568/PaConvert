@@ -292,11 +292,15 @@ class GlobalManager:
 
 
         # sundong
+        "torch.matmul",
+        "torch.multiply",
+        "torch.Tensor.matmul",
+        "torch.Tensor.multiply",
         "torch.amax",
         "torch.amin",
         "torch.Tensor.amax",
         "torch.Tensor.amin",
-        
+
         # zhengsheng
         "torch.broadcast_to",
         "torch.nn.functional.embedding",
@@ -318,6 +322,13 @@ class GlobalManager:
         "torch.flatten",
         "torch.Tensor.flatten",
         "torch.roll",
+        "torch.Tensor.sum",
+        "torch.sum",
+        "torch.repeat_interleave",
+        "torch.Tensor.repeat_interleave",
+        "torch.var",
+        "torch.prod",
+
 
 
         # liuyi
