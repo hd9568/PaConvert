@@ -11,19 +11,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 import textwrap
 
 from apibase import APIBase
 
-obj = APIBase("torch.Tensor.less")
+obj = APIBase("torch.Tensor.data")
 
 
 def test_case_1():
     pytorch_code = textwrap.dedent(
         """
         import torch
-        result = torch.tensor([[1, 2], [3, 4]]).less(torch.tensor([[1, 1], [4, 4]]))
+        x = torch.tensor([1.3192, 1.9915, 1.9674, 1.7151])
+        result = x.data
         """
     )
     obj.run(pytorch_code, ["result"])
@@ -33,21 +35,22 @@ def test_case_2():
     pytorch_code = textwrap.dedent(
         """
         import torch
-        input = torch.tensor([[1, 2], [3, 4]])
-        other = torch.tensor([[1, 1], [4, 4]])
-        result = input.less(other)
+        x = torch.tensor([1.3192, 1.9915, 1.9674, 1.7151])
+        x.data = torch.tensor([1., 1., 1., 1.])
+        result = x.data
         """
     )
-    obj.run(pytorch_code, ["result"])
+    obj.run(pytorch_code, ["x", "result"])
 
 
 def test_case_3():
     pytorch_code = textwrap.dedent(
         """
         import torch
-        input = torch.tensor([[1, 2], [3, 4]])
-        other = torch.tensor([[1, 2], [3, 4]])
-        result = input.less(other)
+        linear = torch.nn.Linear(5, 5)
+        torch.nn.init.constant_(linear.weight, 1)
+
+        result = linear.weight.data
         """
     )
     obj.run(pytorch_code, ["result"])
@@ -57,30 +60,10 @@ def test_case_4():
     pytorch_code = textwrap.dedent(
         """
         import torch
-        input = torch.tensor([[1, 2], [3, 4]])
-        other = torch.tensor([1, 2])
-        result = input.less(other)
-        """
-    )
-    obj.run(pytorch_code, ["result"])
+        linear = torch.nn.Linear(5, 5)
+        linear.weight.data = torch.ones(5, 5)
 
-
-# paddle not support input scalar, y must be Tensor
-def _test_case_5():
-    pytorch_code = textwrap.dedent(
-        """
-        import torch
-        result = torch.tensor([[1, 2], [3, 4]]).less(2)
-        """
-    )
-    obj.run(pytorch_code, ["result"])
-
-
-def test_case_6():
-    pytorch_code = textwrap.dedent(
-        """
-        import torch
-        result = torch.tensor([[1, 2], [3, 4]]).less(other=torch.tensor([[1, 1], [4, 4]]))
+        result = linear.weight.data
         """
     )
     obj.run(pytorch_code, ["result"])

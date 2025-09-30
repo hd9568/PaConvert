@@ -149,7 +149,6 @@ class GlobalManager:
         "torch.cumsum",
         "torch.diff",
 
-
         # honggeng
         "torch.nn.functional.dropout1d",
         "torch.nn.parameter.Parameter",
@@ -170,7 +169,6 @@ class GlobalManager:
         "torch.Tensor.sub",
         "torch.Tensor.sub_",
         "torch.Tensor.random_",
-
 
         # sensen
         "torch.range",
@@ -194,7 +192,6 @@ class GlobalManager:
         "torch.cuda.mem_get_info",
         "torch.cuda.is_initialized",
 
-
         # hongyu
         "torch.permute",
         "torch.Tensor.permute",
@@ -210,7 +207,6 @@ class GlobalManager:
         "torch.Tensor.stride",
         "torch.Tensor.get_device",
         "torch.random.initial_seed",
-
 
         # linjun
         "torch.as_tensor", 
@@ -243,14 +239,12 @@ class GlobalManager:
         "torch.functional.einsum",
         "torch.functional.norm",
 
-
         # siyu
         "torch.multinomial",
         "torch.var",
         "torch.rand_like",
         "torch.mean",
         "torch.Tensor.mean",
-
 
         # shijie
         "torch.msort",
@@ -272,14 +266,12 @@ class GlobalManager:
         "torch.scatter_reduce",
         "torch.nn.functional.silu",
 
-
         # yuyan
         "torch.Tensor.softmax",
         "torch.special.softmax",
         "torch.softmax",
         "torch.Tensor.clamp",
         "torch.Tensor.itemsize",
-
 
         # huoda
         "torch.get_default_dtype",
@@ -501,14 +493,11 @@ class GlobalManager:
         "torch.Tensor.__rtruediv__",
         "torch.Tensor.__setitem__",
 
-
         # sundong
         "torch.matmul",
         "torch.linalg.matmul",
         "torch.mul",
-        "torch.mul_",
         "torch.multiply",
-        "torch.multiply_",
         "torch.Tensor.mul",
         "torch.Tensor.mul_",
         "torch.Tensor.multiply",
@@ -522,7 +511,6 @@ class GlobalManager:
         "torch.log2",
         "torch.Tensor.remainder",
         "torch.remainder",
-
 
         # zhengsheng
         "torch.broadcast_to",
@@ -554,7 +542,6 @@ class GlobalManager:
         "torch.ceil",
         "torch.floor_divide",
         "torch.masked_select",
-
 
         # liuyi
         "torch.finfo",
@@ -595,7 +582,6 @@ class GlobalManager:
         "torch.nn.functional.gelu",
         "torch.layer_norm",
 
-
         # haoyang
         "torch.logical_not",
         "torch.Tensor.logical_not",
@@ -616,7 +602,6 @@ class GlobalManager:
         "torch.conv2d",
         "torch.conv3d",
 
-
         # zhichao
         "torch.bfloat16",
         "torch.bool",
@@ -635,8 +620,10 @@ class GlobalManager:
         "torch.Tensor.type_as",
         "torch.nn.Sequential",
 
-
         # zhouwei
+        "torch.Tensor.clone",
+        "torch.Tensor.contiguous",
+        "torch.Tensor.is_contiguous",
         "torch.utils.cpp_extension.CUDA_HOME",
         "torch.Tensor.is_coalesced",
         "torch.torch.int32",
@@ -681,7 +668,41 @@ class GlobalManager:
         "torch.Tensor.ne",
         "torch.manual_seed",
         "torch.asarray",
-        # "torch.save",
+        "torch.newaxis",
+        "torch.inf",
+        "torch.nan",
+        "torch.pi",
+        "torch.e",
+        "torch.cat",
+        "torch.concatenate",
+        "torch.take_along_dim",
+        "torch.clamp",
+        "torch.ger",
+        "torch.div",
+        "torch.Tensor.div_",
+        "torch.eq",
+        "torch.ne",
+        "torch.lt",
+        "torch.less",
+        "torch.le",
+        "torch.greater",
+        "torch.ge",
+        "torch.swapdims",
+        "torch.swapaxes",
+        "torch.manual_seed",
+        "torch.sub",
+        "torch.Tensor.sub_",
+        "torch.get_default_device",
+        "torch.Tensor.eq",
+        "torch.Tensor.ne",
+        "torch.Tensor.lt",
+        "torch.Tensor.less",
+        "torch.Tensor.le",
+        "torch.Tensor.greater",
+        "torch.Tensor.ge",
+        "torch.Tensor.swapdims",
+        "torch.Tensor.swapaxes",
+        "torch.Tensor.sub",
 
         # qianyue
         "torch.gather",
@@ -690,18 +711,16 @@ class GlobalManager:
         "torch.Tensor.scatter_",
         "torch.scatter",
 
-
         # xiangyu
         "torch.cuda.get_device_properties",
         "torch.cuda.get_rng_state",
         "torch.cuda.is_current_stream_capturing",
         "torch.cuda.manual_seed_all",
         "torch.cuda.set_rng_state",
-        # "torch.get_default_device",
+        "torch.get_default_device",
         "torch.get_device_module",
         "torch.cuda.is_available",
         "torch.device",
-        #Additional additions
         "torch.cuda.get_device_capability",
 
         # geyuqiang
